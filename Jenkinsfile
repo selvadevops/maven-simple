@@ -3,6 +3,7 @@ node{
     git 'https://github.com/selvadevops/maven-simple'
   }
   stage('Compile-package'){
-   sh 'mvn package'
+    def mnHome = tool name: 'maventamil', type: 'maven'   
+    sh "${mvnHome}/bin/mvn package"
   }
 }  
